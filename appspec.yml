@@ -3,3 +3,8 @@ os: linux
 files:
   - source: /
     destination: /usr/share/nginx/html
+hooks:
+   BeforeInstall:
+     - location: clean_documentroot.sh
+       timeout: 1000
+       runas: root
